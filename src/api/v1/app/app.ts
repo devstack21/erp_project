@@ -32,12 +32,12 @@ class App {
     }
     private initializeMiddlewares(){
         this.app.use(cors());
-        this.app.use(session({
-            secret: process.env.SECRET_SESSION as string,
-            resave: false,
-            saveUninitialized: false,
-            cookie: { secure: false }
-        }));
+        // this.app.use(session({
+        //     secret: process.env.SECRET_SESSION as string,
+        //     resave: false,
+        //     saveUninitialized: false,
+        //     cookie: { secure: false }
+        // }));
         this.app.use(express.static('public'));
         this.app.use(morgan('dev'));
         this.app.use(bodyParser.urlencoded({ extended: false }));
