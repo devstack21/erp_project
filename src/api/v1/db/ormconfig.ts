@@ -5,10 +5,7 @@ dotenv.config();
 
 const dbInstance = new DataSource({
     type: "postgres",
-    host: process.env.DB_HOST,
-    port: parseInt(process.env.DB_PORT as string, 10),
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
+    url: process.env.PG_URL_REMOTE,
     database: process.env.DB_DATABASE,
     entities: [
         'src/api/v1/db/models/*.ts'   
