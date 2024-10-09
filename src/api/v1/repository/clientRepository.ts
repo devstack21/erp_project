@@ -30,6 +30,13 @@ export const ClientRepository = dbInstance.getRepository(Client).extend({
             .getOne() 
     },
 
+    async findByPhone(phone : string ) : Promise<Array<Client> | []> {
+        return this.createQueryBuilder("client")
+            .where("client.phone = :phone", { phone})
+            .orderBy()
+            .getMany()
+    },
+
     async findByEmail(email : string) : Promise<Array<Client> | []> {
         return this.createQueryBuilder("client")
             .where("client.email = :email", { email})

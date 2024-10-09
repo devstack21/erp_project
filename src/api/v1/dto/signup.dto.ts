@@ -1,7 +1,7 @@
 import { IsString, IsEmail, Length, IsNumber, Validate, IsNotEmpty, Matches, IsPositive } from 'class-validator';
 import { PasswordValidate } from '../constraint/signDto.constraint/mdp.constraint';
 import { EmailUniqueValidate } from '../constraint/signDto.constraint/email.constraints';
-
+import { PhoneUniqueValidate } from '../constraint/signDto.constraint/phone.constraints';
 export class SignupDto {
   
   @IsString()
@@ -12,7 +12,6 @@ export class SignupDto {
 })
   username!: string;
 
-
   @Validate(EmailUniqueValidate , {
     message : 'email already exists'
   })
@@ -20,7 +19,9 @@ export class SignupDto {
   @IsNotEmpty({message : "email must be not empty "})
   email!: string;
 
-  // define validation unique 
+  @Validate(PhoneUniqueValidate , {
+    message : "phone exists already"
+  })
   @IsString()
   @Length(9)
   @IsNotEmpty({message : "phone must be not empty "})
