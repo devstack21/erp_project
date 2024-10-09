@@ -10,7 +10,7 @@ class ApiStaticDataRouter implements RouterI{
       this.router = express.Router()  
    }
    getInstanceRouter() : express.Router{
-    this.router.use(AuthJwtMiddleware.authorizeRequest)
+    this.router
          .get('/cities' ,apiStaticDataControler.getListCity)
          .get('/countries' ,apiStaticDataControler.getListCountry)  
          .get('/districts' ,apiStaticDataControler.getListDistrict)
