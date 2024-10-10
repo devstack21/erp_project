@@ -45,15 +45,15 @@ class App {
        
     }
     private initializeRoutes(){
-        this.app.use('/ws/auth/v1', authRouter.getInstanceRouter() )
-        this.app.use('/ws/api/v1/store', storeRouter.getInstanceRouter());
-        this.app.use('/ws/api/v1/article', controlArticleRouter.getInstanceRouter())
-        this.app.use('/ws/api/v1/sale', saleRouter.getInstanceRouter())
-        this.app.use('/ws/api/v1/invoice', billingRouter.getInstanceRouter())
-        this.app.use('/ws/api/v1/alert', alertRouter.getInstanceRouter())
-        this.app.use('/ws/api/v1/supplier', supplierRouter.getInstanceRouter())
-        this.app.use('/ws/api/v1/data', apiStaticDataRouter.getInstanceRouter())
-        this.app.use('/ws/api/v1/client', clientRouter.getInstanceRouter())
+        this.app.use('/ws/v1/auth', authRouter.getInstanceRouter() )
+        this.app.use('/ws/v1/api/store', storeRouter.getInstanceRouter());
+        this.app.use('/ws/v1/api/article', controlArticleRouter.getInstanceRouter())
+        this.app.use('/ws/v1/api/sale', saleRouter.getInstanceRouter())
+        this.app.use('/ws/v1/api/invoice', billingRouter.getInstanceRouter())
+        this.app.use('/ws/v1/api/alert', alertRouter.getInstanceRouter())
+        this.app.use('/ws/v1/api/supplier', supplierRouter.getInstanceRouter())
+        this.app.use('/ws/v1/api/data', apiStaticDataRouter.getInstanceRouter())
+        this.app.use('/ws/v1/api/client', clientRouter.getInstanceRouter())
         this.app.use(ErrorMiddlewareHttp.NotFoundErrorsHttp)
         this.app.use(ErrorMiddlewareHttp.GlobalErrorHandlerHttp)
     }
